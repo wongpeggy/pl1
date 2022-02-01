@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- storymap.html -->
+<!-- Author: Peggy Wong -->
+<!-- Date Created: Feb 01, 2022 -->
+<!-- Date Modified: Feb 01, 2022 -->
+<!-- Source: https://developers.google.com/maps/documentation/javascript/overview#maps_map_simple-html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Story Map | Lion Rock</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script>
+            let map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementByID("map"), {
+                    center: { lat: 22.3523, lng: 114.1870 }, 
+                    zoom: 15
+                })
+            }
+        </script>
+        <style>
+            body {
+                margin: 0vw;
+            }
+            #banner {
+                width: 100%;
+            }
+            #banner-text {
+                position: absolute;
+                left: 5vw;
+                top: 1.5vw;
+                color: #002544;
+                font-family: Helvetica, sans-serif;
+            }
+            #title {
+                font-size: 3vw;
+            }
+            #subtitle {
+                font-size: 2vw;
+            }
+            #map {
+                height: 100%;
+            }
+            footer {
+                background-color: #002544;
+                color: white;
+                font-family: Helvetica, sans-serif;
+                font-size: 0.8vw;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Banner -->
+        <!-- Credit: https://unsplash.com/photos/iglsC6XUpuE Free to use under the Unsplash License -->
+        <header>
+            <img id="banner" src="banner.jpg" alt="Banner">
+            <div id="banner-text">
+                <h1 id="title">Lion Rock Trail Map</h1>
+                <h2 id="subtitle">The Most Iconic Mountain in Hong Kong</h2>
+            </div>
+        </header>
+        <!-- Map -->
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap&v=weekly" async></script>
+        <!-- Footer -->
+        <footer>Peggy Wong | Fleming GIS 2022 | All Rights Reserved</footer>
+    </body>
+</html>
