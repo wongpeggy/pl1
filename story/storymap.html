@@ -11,9 +11,8 @@
         <title>Story Map | Lion Rock</title>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script>
-            let map;
             function initMap() {
-                map = new google.maps.Map(document.getElementById("map"), {
+                const map = new google.maps.Map(document.getElementById("map"), {
                     center: { lat: 22.3523, lng: 114.1870 }, 
                     zoom: 15
                 });
