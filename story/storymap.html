@@ -21,19 +21,23 @@
                 const directionsRenderer = new google.maps.DirectionsRenderer();
                 directionsRenderer.setMap(map);
             }
-            function calcRoute() {
-                var start = 'Wong Tai Sin Station, Hong Kong';
-                var end = 'Lion Rock Peak, Hong Kong';
-                var request = {
-                    origin: start,
-                    destination: end,
-                    travelMode: 'WALKING'
-                };
-                directionsService.route(request, function(response, status) {
-                    if (status == 'OK') {
-                        directionsRenderer.setDirections(response);
-                    }
-                });
+            function calculateAndDisplayRoute(directionsService, directionsRenderer) {                    
+                directionsService
+                .route({
+                    origin: "Temple Hill Fat Jong Temple, Hong Kong",
+                    destination: "Lion Rock Park Community Garden, Hong Kong",
+                    waypoints: [
+                        { location: "Lion's Pavilion, Hong Kong" },
+                        { location: "Lion Rock Peak, Hong Kong" },
+                        { location: "Lion Rock Head, Hong Kong" },
+                        { location: "Wind and Rain Pavilion, Hong Kong"}
+                    ],
+                    travelMode: google.maps.TravelMode.WALKING
+                })
+                .then((response) => {
+                    directionsRenderer.setDirections(response);
+                })
+                .catch((e) => window.alert("Directions request failed due to " + status));
             }
         </script>
         <style>
