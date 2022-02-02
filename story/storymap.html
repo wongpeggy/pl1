@@ -27,8 +27,8 @@
             function calculateAndDisplayRoute(directionsService, directionsRenderer) {                    
                 directionsService
                 .route({
-                    origin: "ChIJxXEGSN4GBDQR7cn2i15j2KE",
-                    destination: "ChIJFRQ-EiQHBDQR7JGUWFnrlfs",
+                    origin: { placeId: "ChIJxXEGSN4GBDQR7cn2i15j2KE" },
+                    destination: { placeId: "ChIJFRQ-EiQHBDQR7JGUWFnrlfs" },
                     travelMode: google.maps.TravelMode.WALKING
                 })
                 .then((response) => {
