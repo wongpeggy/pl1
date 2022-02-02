@@ -21,15 +21,15 @@
                 const directionsRenderer = new google.maps.DirectionsRenderer();
                 directionsRenderer.setMap(map);
             }
-            function calcRoute(){
-                var start = "Wong Tai Sin Station, Hong Kong"
-                var end = "Lion Rock Peak, Hong Kong"
+            function calcRoute() {
+                var start = "Wong Tai Sin Station, Hong Kong";
+                var end = "Lion Rock Peak, Hong Kong";
                 var request = {
                     origin: start,
                     destination: end,
                     travelMode: 'WALKING'
                 };
-                directionService.route(request, function(result, status) {
+                directionsService.route(request, function(result, status) {
                     if (status == 'OK') {
                         directionsRenderer.setDirections(result);
                     }
