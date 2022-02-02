@@ -29,6 +29,12 @@
                 .route({
                     origin: { placeId: "ChIJxXEGSN4GBDQR7cn2i15j2KE" },
                     destination: { placeId: "ChIJFRQ-EiQHBDQR7JGUWFnrlfs" },
+                    waypoints: [
+                        { location: { placeId: "ChIJgcSiO-QGBDQRjZA0r0XtULM" } }, 
+                        { location: { placeId: "ChIJYy9T2D0HBDQRhK488nXfvkY" } },
+                        { location: { placeId: "ChIJybiZthgHBDQRlNEruoXvpLI" } },
+                        { location: { placeId: "ChIJb6_IkSIHBDQRIsbN-JkA8K8" } }
+                    ],
                     travelMode: google.maps.TravelMode.WALKING
                 })
                 .then((response) => {
