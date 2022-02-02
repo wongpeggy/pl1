@@ -27,6 +27,9 @@
                 const directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer);
+                const infowindow = new google.maps.InfoWindow({
+                    content: "<img src='http://i.stack.imgur.com/g672i.png'>"
+                });
                 const marker = new google.maps.Marker({
                     position: { lat: 22.349760925512392, lng: 114.19398881331269 },
                     map,
