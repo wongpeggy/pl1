@@ -3,13 +3,15 @@
 <!-- Author: Peggy Wong -->
 <!-- Date Created: Feb 01, 2022 -->
 <!-- Date Modified: Feb 01, 2022 -->
-<!-- Source: https://developers.google.com/maps/documentation/javascript/overview#maps_map_simple-html -->
-<!-- Source: https://developers.google.com/maps/documentation/javascript/directions -->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Story Map | Lion Rock</title>
+        <!-- Google Maps Javascript API -->
+        <!-- Source: https://developers.google.com/maps/documentation/javascript/overview#maps_map_simple-html -->
+        <!-- Source: https://developers.google.com/maps/documentation/javascript/directions -->
+        <!-- Source: https://developers.google.com/maps/documentation/javascript/examples/directions-waypoints#maps_directions_waypoints-javascript -->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script>
             function initMap() {
@@ -25,13 +27,13 @@
             function calculateAndDisplayRoute(directionsService, directionsRenderer) {                    
                 directionsService
                 .route({
-                    origin: "Temple Hill Fat Jong Temple, Hong Kong",
-                    destination: "Lion Rock Park Community Garden, Hong Kong",
+                    origin: "ChIJxXEGSN4GBDQR7cn2i15j2KE",
+                    destination: "ChIJFRQ-EiQHBDQR7JGUWFnrlfs",
                     waypoints: [
-                        { location: "Lion's Pavilion, Hong Kong" },
-                        { location: "Lion Rock Peak, Hong Kong" },
-                        { location: "Lion Rock Head, Hong Kong" },
-                        { location: "Wind and Rain Pavilion, Hong Kong"}
+                        { location: "ChIJgcSiO-QGBDQRjZA0r0XtULM" },
+                        { location: "ChIJYy9T2D0HBDQRhK488nXfvkY" },
+                        { location: "ChIJybiZthgHBDQRlNEruoXvpLI" },
+                        { location: "ChIJb6_IkSIHBDQRIsbN-JkA8K8" }
                     ],
                     travelMode: google.maps.TravelMode.WALKING
                 })
