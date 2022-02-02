@@ -12,50 +12,52 @@
         <script src="story.js"></script>
         <style>
             html, body {
+                background-color: #002544;
+                height: 100%;
                 margin: 0;
                 padding: 0;
-                height: 100%;
-                background-color: #002544;
             }
             #banner {
                 width: 100%;
             }
             #banner-text {
-                position: absolute;
-                left: 5vw;
-                top: 0.25vw;
                 color: #002544;
                 font-family: Helvetica, sans-serif;
+                left: 5vw;
+                position: absolute;
+                top: 0.25vw;
             }
             #title {
-                margin-bottom: 0.5vw;
                 font-size: 3vw;
+                margin-bottom: 0.5vw;
             }
             #subtitle {
-                margin-top: 0;
                 font-size: 1.75vw;
+                margin-top: 0;
             }
             article {
-                padding-left: 16px;
-                padding-right: 16px;
                 background-color: #002544;
                 color: white;
                 font-family: Helvetica, sans-serif;
                 font-size: 16px;
                 letter-spacing: 1px;
                 line-height: 1.5;
+                padding-left: 16px;
+                padding-right: 16px;
+                width: 20%;
             }
             #map {
                 height: 100%;
+                width: 80%;
             }
             footer {
-                padding-top: 12px;
-                padding-bottom: 12px;
                 background-color: black;
                 color: white;
                 font-family: Helvetica, sans-serif;
                 font-size: 12px;
                 font-weight: bold;
+                padding-bottom: 12px;
+                padding-top: 12px;
                 text-align: center;
             }
         </style>
@@ -70,14 +72,15 @@
                 <h2 id="subtitle">The Most Iconic Mountain in Hong Kong</h2>
             </div>
         </header>
-        <!-- Map Frame -->
-        <div id="map"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap&v=weekly" async></script>
-        <!-- Article -->
-        <article>
-            <p>Lion Rock is a mountain in Hong Kong which is well known for its resemblance to a crouching lion and its breathtaking panorama view of Kowloon Peninsula and Victoria Harbour. According to folklore, the God sent a lion down to suppress the nine dragons infested in Kowloon, and the lion turned into Lion Rock. It is worth mentioning that Lion Rock Spirit refers to the core values, including solidarity and perseverance, that are inherited by Hong Kong people from generation to generation.</p>
-            <p>The hiking route is only 4.7km and the total duration is around 2 to 3 hours. The hikers can access the trail easily by public transit. Although Lion Rock is one of the most popular trails in Hong Kong, please be advised that Lion Rock Peak is one of the high risk locations due to its level of difficulty, with records of serious and fatal accidents. The trail can be rocky and steep with no fences as the hikers approach to the peak. The hikers should be properly prepared and be cautious of the steep cliffs.</p>
-        </article>
+        <!-- Main Content -->
+        <main>
+            <article>
+                <p>Lion Rock is a mountain in Hong Kong which is well known for its resemblance to a crouching lion and its breathtaking panorama view of Kowloon Peninsula and Victoria Harbour. According to folklore, the God sent a lion down to suppress the nine dragons infested in Kowloon, and the lion turned into Lion Rock. It is worth mentioning that Lion Rock Spirit refers to the core values, including solidarity and perseverance, that are inherited by Hong Kong people from generation to generation.</p>
+                <p>The hiking route is only 4.7km and the total duration is around 2 to 3 hours. The hikers can access the trail easily by public transit. Although Lion Rock is one of the most popular trails in Hong Kong, please be advised that Lion Rock Peak is one of the high risk locations due to its level of difficulty, with records of serious and fatal accidents. The trail can be rocky and steep with no fences as the hikers approach to the peak. The hikers should be properly prepared and be cautious of the steep cliffs.</p>
+            </article>
+            <div id="map"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap&v=weekly" async></script>
+        </main>
         <!-- Footer -->
         <footer>Peggy Wong | Fleming GIS 2022 | All Rights Reserved</footer>
     </body>
