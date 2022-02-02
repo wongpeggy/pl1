@@ -41,7 +41,7 @@
                     return new google.maps.Marker({
                         position: location,
                         map,
-                        label: labels[i % labels.length]
+                        label: {text: labels[i % labels.length], color: "white"}
                     });
                 });
                 const infowindow = new google.maps.InfoWindow({
