@@ -20,6 +20,7 @@
                 const directionsService = new google.maps.DirectionsService();
                 const directionsRenderer = new google.maps.DirectionsRenderer();
                 directionsRenderer.setMap(map);
+                calculateAndDisplayRoute(directionsService, directionsRenderer);
             }
             function calculateAndDisplayRoute(directionsService, directionsRenderer) {                    
                 directionsService
