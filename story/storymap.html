@@ -67,14 +67,25 @@
                 margin-top: 0;
                 font-size: 1.75vw;
             }
+            article {
+                padding-left: 5vw;
+                padding-right: 5vw;
+                background-color: #002544;
+                color: white;
+                font-family: Helvetica, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+            }
             #map {
                 height: 100%;
             }
             footer {
+                padding-top: 12px;
+                padding-bottom: 12px;
                 background-color: #002544;
                 color: white;
                 font-family: Helvetica, sans-serif;
-                font-size: 0.8vw;
+                font-size: 12px;
                 text-align: center;
             }
         </style>
@@ -89,6 +100,11 @@
                 <h2 id="subtitle">The Most Iconic Mountain in Hong Kong</h2>
             </div>
         </header>
+        <!-- Introduction -->
+        <article>
+            <p>Lion Rock is a mountain in Hong Kong which is well known for its resemblance to a crouching lion and its breathtaking panorama view of Kowloon Peninsula and Victoria Harbour. According to folklore, the God sent a lion down to suppress the nine dragons infested in Kowloon, and the lion turned into Lion Rock. It is worth mentioning that Lion Rock Spirit refers to the core values, including solidarity and perseverance, that are inherited by Hong Kong people from generation to generation.</p>
+            <p>The hiking route is only 4.7km and the total duration is around 2 to 3 hours. The hikers can access the trail easily by public transit. Although Lion Rock is one of the most popular trails in Hong Kong, please be advised that Lion Rock Peak is one of the high risk locations due to its level of difficulty, with records of serious and fatal accidents. The trail can be rocky and steep with no fences as the hikers approach to the peak. The hikers should be properly prepared and be cautious of the steep cliffs.</p>
+        </article>
         <!-- Map -->
         <div id="map"></div>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap&v=weekly" async></script>
