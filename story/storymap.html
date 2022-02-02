@@ -14,15 +14,6 @@
         <!-- Reference (Info Windows with maxWidth): https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max -->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script>
-            const locations = [
-                { lat: 22.349760925512392, lng: 114.19398881331269 },
-                { lat: 22.355412872630634, lng: 114.19939732649837 },
-                { lat: 22.352863488215085, lng: 114.18694959705897 },
-                { lat: 22.35232339958738, lng: 114.18513768965074 },
-                { lat: 22.35079576142382, lng: 114.18176206902695 },
-                { lat: 22.350477562553596, lng: 114.18137974129192 },
-                { lat: 22.34492935698997, lng: 114.18436131244802 }
-            ];
             function initMap() {
                 const map = new google.maps.Map(document.getElementById("map"), {
                     center: { lat: 22.3523, lng: 114.1870 }, 
@@ -37,6 +28,16 @@
                 const directionsRenderer = new google.maps.DirectionsRenderer();
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer);
+                const labels = "123456789";
+                const locations = [
+                    { lat: 22.349760925512392, lng: 114.19398881331269 },
+                    { lat: 22.355412872630634, lng: 114.19939732649837 },
+                    { lat: 22.352863488215085, lng: 114.18694959705897 },
+                    { lat: 22.35232339958738, lng: 114.18513768965074 },
+                    { lat: 22.35079576142382, lng: 114.18176206902695 },
+                    { lat: 22.350477562553596, lng: 114.18137974129192 },
+                    { lat: 22.34492935698997, lng: 114.18436131244802 }
+                ];
                 const markers = locations.map((location, i) => {
                     return new google.maps.Marker({
                         position: location,
