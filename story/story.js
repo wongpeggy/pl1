@@ -56,7 +56,7 @@ function initMap() {
         });
     });
     const infowindow = new google.maps.InfoWindow({
-        content: "<img src='fat_jong_temple.jpg'><p>Temple Hill Fat Jong Temple</p>",
+        content: "<img src='img/fat_jong_temple.jpg'><p>Temple Hill Fat Jong Temple</p>",
         maxWidth: 130,
     });
     for (const marker of markers) {
