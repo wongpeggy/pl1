@@ -25,7 +25,7 @@
                     }]
                 });
                 const directionsService = new google.maps.DirectionsService();
-                const directionsRenderer = new google.maps.DirectionsRenderer();
+                const directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer);
                 const locations = [
@@ -37,6 +37,7 @@
                     { lat: 22.350477562553596, lng: 114.18137974129192 },
                     { lat: 22.34492935698997, lng: 114.18436131244802 }
                 ];
+                const labels = "123456789";
                 const markers = locations.map((location, i) => {
                     return new google.maps.Marker({
                         position: location,
