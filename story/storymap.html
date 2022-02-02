@@ -27,6 +27,12 @@
                 const directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer);
+                const contentStringOne =
+                      "<div><img src="fat-jong-temple.jpg"></div>" + 
+                      "<div><p>Temple Hill Fat Jong Temple</p></div>";
+                const infowindow = new google.maps.InfoWindow({
+                    content: contentStringOne
+                });
                 const marker = new google.maps.Marker({
                     position: { lat: 22.349760925512392, lng: 114.19398881331269 },
                     map,
