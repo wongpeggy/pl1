@@ -36,7 +36,7 @@ function initMap() {
     // Create a constant for marker labels
     const labels = "123456789";
     // Create a constant array for markers
-    const markerinfo = [{
+    const markerinfolist = [{
             lat: 22.3497609255,
             lng: 114.1939888133,
             info: "<img src='img/fat_jong_temple.jpg'><p>Temple Hill Fat Jong Temple</p>"
@@ -72,9 +72,9 @@ function initMap() {
     // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
     // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
     // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-labels
-    const markers = markerinfo.map((location, i) => {
+    const markers = markerinfolist.map((markerinfo, i) => {
         const marker = new google.maps.Marker({
-            position: location,
+            position: markerinfo,
             map,
             label: {
                 text: labels[i % labels.length],
@@ -82,7 +82,7 @@ function initMap() {
             }
         });
         const infowindow = new google.maps.InfoWindow({
-            content: markerinfo.info,
+            content: markerinfolist.info,
             maxWidth: 130
         });
         marker.addListener("click", () => {
