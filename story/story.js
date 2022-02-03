@@ -82,7 +82,7 @@ function initMap() {
             }
         });
         const infowindow = new google.maps.InfoWindow({
-            content: markerinfolist.info,
+            content: markerinfo.info,
             maxWidth: 130
         });
         marker.addListener("click", () => {
