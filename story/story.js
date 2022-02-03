@@ -2,7 +2,6 @@
 // Author: Peggy Wong
 // Date Created: Feb 01, 2022
 // Date Modified: Feb 02, 2022
-
 function initMap() {
     // Create a new map and hide the labels of point of interest
     // Reference: https://developers.google.com/maps/documentation/javascript/reference/map#Map
@@ -32,10 +31,9 @@ function initMap() {
     const directionsRenderer = new google.maps.DirectionsRenderer({
         suppressMarkers: true
     });
-    // Call setMap() on the renderer to bind it to the passed map
+    // Call setMap() on the renderer to bind it to the passed map, and then call calculateAndDisplayRoute()
     // Reference: https://developers.google.com/maps/documentation/javascript/directions#DisplayingResults
     directionsRenderer.setMap(map);
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     calculateAndDisplayRoute(directionsService, directionsRenderer);
     // Create an array of numbers used to label the markers
     // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
@@ -73,8 +71,9 @@ function initMap() {
             info: "<img src='img/lion_rock_park.jpg'><p><b>Lion Rock Park</b></p><p>Elevation: 100m</p><p>Progress: 4.7km/4.7km</p>"
         }
     ];
-    // Create markers and info windows
-    for (const markerinfo of markerinfolist) { 
+    // Create markers and info windows using for loop
+    // Reference: https://www.w3schools.com/js/js_iterables.asp
+    for (const markerinfo of markerinfolist) {
         // Create markers using the constants of labels and markerinfolist
         // Reference: https://developers.google.com/maps/documentation/javascript/reference/marker#Marker
         // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
@@ -95,7 +94,7 @@ function initMap() {
         // Example: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max
         const infowindow = new google.maps.InfoWindow({
             content: markerinfo.info,
-            maxWidth: 120
+            maxWidth: 130
         });
         // Open the info window when clicking the marker
         // Reference: https://developers.google.com/maps/documentation/javascript/reference/event#MVCObject-Methods
