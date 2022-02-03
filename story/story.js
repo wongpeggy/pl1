@@ -108,6 +108,9 @@ function initMap() {
                 shouldFocus: false
             });
         });
+        google.maps.event.addListener(map, "click", function(event) {
+            infowindow.close();
+        });
     };
 }
 
