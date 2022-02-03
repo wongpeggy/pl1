@@ -35,30 +35,36 @@ function initMap() {
     calculateAndDisplayRoute(directionsService, directionsRenderer);
     // Create a constant for marker labels
     const labels = "123456789";
-    // Create a constant array for marker locations
-    const locations = [{
+    // Create a constant array for markers
+    const markerinfo = [{
             lat: 22.3497609255,
-            lng: 114.1939888133
+            lng: 114.1939888133,
+            info: "<img src='img/fat_jong_temple.jpg'><p>Temple Hill Fat Jong Temple</p>"
         },
         {
             lat: 22.3555093106,
-            lng: 114.1988428342
+            lng: 114.1988428342,
+            info: "<img src='img/lion_rock_country_park_entrance.jpg'><p>Lion Rock Country Park Entrance</p>"
         },
         {
             lat: 22.3528634882,
-            lng: 114.1869495970
+            lng: 114.1869495970,
+            info: "<img src='img/lion_rock_peak.jpg'><p>Lion Rock Peak</p>"
         },
         {
             lat: 22.3523096096,
-            lng: 114.1849627106
+            lng: 114.1849627106,
+            info: "<img src='img/lion_rock_head.jpg'><p>Lion Rock Head</p>"
         },
         {
             lat: 22.3507957614,
-            lng: 114.1817620690
+            lng: 114.1817620690,
+            info: "<img src='img/wind_and_rain_pavilion.jpg'><p>Wind and Rain Pavilion.jpg</p>"
         },
         {
             lat: 22.3449293569,
-            lng: 114.1843613124
+            lng: 114.1843613124,
+            info: "<img src='img/lion_rock_park.jpg'><p>Lion Rock Park.jpg</p>"
         }
     ];
     // Create markers using the constants of marker labels and locations
@@ -66,14 +72,25 @@ function initMap() {
     // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
     // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
     // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-labels
-    const markers = locations.map((location, i) => {
-        return new google.maps.Marker({
+    const markers = markerinfo.map((location, i) => {
+        const marker = new google.maps.Marker({
             position: location,
             map,
             label: {
                 text: labels[i % labels.length],
                 color: "white"
             }
+        });
+        const infowindow = new google.maps.InfoWindow({
+            content: markerinfo.info,
+            maxWidth: 130
+        });
+        marker.addListener("click", () => {
+            infowindow.open({
+                anchor: marker,
+                map,
+                shouldFocus: false
+            });
         });
     });
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
