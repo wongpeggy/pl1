@@ -39,7 +39,7 @@ function initMap() {
     const markerinfolist = [{
             lat: 22.3497609255,
             lng: 114.1939888133,
-            info: "<img src='img/fat_jong_temple.jpg'>"
+            info: "<img src='img/fat_jong_temple.jpg'><p style="font-weight: bold;">Temple Hill Fat Jong Temple</p>"
         },
         {
             lat: 22.3555093106,
