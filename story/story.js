@@ -98,7 +98,7 @@ function initMap() {
             content: markerInfo.info,
             maxWidth: 130
         });
-        // Open the info window when clicking the marker
+        // Open info window by clicking the marker
         // Reference: https://developers.google.com/maps/documentation/javascript/reference/event#MVCObject-Methods
         // Example: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max
         marker.addListener("click", () => {
@@ -108,6 +108,9 @@ function initMap() {
                 shouldFocus: false
             });
         });
+        // Close info window by clicking on the map
+        // Reference: https://developers.google.com/maps/documentation/javascript/reference/event#MVCObject-Methods
+        // Example: https://stackoverflow.com/questions/10022873/closing-info-windows-in-google-maps-by-clicking-the-map
         google.maps.event.addListener(map, "click", function(event) {
             infowindow.close();
         });
