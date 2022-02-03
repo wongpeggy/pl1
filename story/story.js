@@ -39,32 +39,32 @@ function initMap() {
     const markerinfolist = [{
             lat: 22.3497609255,
             lng: 114.1939888133,
-            info: "<img src='img/fat_jong_temple.jpg'><p style="font-weight: bold;">Temple Hill Fat Jong Temple</p>"
+            info: "<img src='img/fat_jong_temple.jpg'><b>Temple Hill Fat Jong Temple</b><p>Elevation: 140m</p><p>Progress: 0.0km/4.7km</p>"
         },
         {
             lat: 22.3555093106,
             lng: 114.1988428342,
-            info: "<img src='img/lion_rock_country_park_entrance.jpg'>"
+            info: "<img src='img/lion_rock_country_park_entrance.jpg'><p><b>Lion Rock Country Park Entrance</b></p><p>Elevation: 290m</p><p>Progress: 1.2km/4.7km</p>"
         },
         {
             lat: 22.3528634882,
             lng: 114.1869495970,
-            info: "<img src='img/lion_rock_peak.jpg'>"
+            info: "<img src='img/lion_rock_peak.jpg'><p><b>Lion Rock Peak</b></p><p>Elevation: 495m</p><p>Progress: 3.0km/4.7km</p>"
         },
         {
             lat: 22.3523096096,
             lng: 114.1849627106,
-            info: "<img src='img/lion_rock_head.jpg'>"
+            info: "<img src='img/lion_rock_head.jpg'><p><b>Lion Rock Head</b></p><p>Elevation: 490m</p><p>Progress: 3.2km/4.7km</p>"
         },
         {
             lat: 22.3507957614,
             lng: 114.1817620690,
-            info: "<img src='img/wind_and_rain_pavilion.jpg'>"
+            info: "<img src='img/wind_and_rain_pavilion.jpg'><p><b>Wind and Rain Pavilion</b></p><p>Elevation: 330m</p><p>Progress: 3.9km/4.7km</p>"
         },
         {
             lat: 22.3449293569,
             lng: 114.1843613124,
-            info: "<img src='img/lion_rock_park.jpg'>"
+            info: "<img src='img/lion_rock_park.jpg'><p><b>Lion Rock Park</b></p><p>Elevation: 100m</p><p>Progress: 4.7km/4.7km</p>"
         }
     ];
     // Create markers using the constants of marker labels and locations
