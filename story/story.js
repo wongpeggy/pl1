@@ -74,7 +74,7 @@ function initMap() {
         }
     ];
     // Create markers and info windows
-    markerinfolist.map((markerinfo, i) => {
+    for (const markerinfo of markerinfolist) { 
         // Create markers using the constants of labels and markerinfolist
         // Reference: https://developers.google.com/maps/documentation/javascript/reference/marker#Marker
         // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
