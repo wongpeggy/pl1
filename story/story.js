@@ -93,21 +93,6 @@ function initMap() {
             });
         });
     });
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const infowindow = new google.maps.InfoWindow({
-        content: "<img src='img/fat_jong_temple.jpg'><p>Temple Hill Fat Jong Temple</p>",
-        maxWidth: 130,
-    });
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    for (const marker of markers) {
-        marker.addListener("click", () => {
-            infowindow.open({
-                anchor: marker,
-                map,
-                shouldFocus: false
-            });
-        });
-    }
 }
 
 // Define the function to calculate and display route
