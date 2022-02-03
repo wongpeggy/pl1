@@ -5,7 +5,9 @@
 function initMap() {
     // Create a new map and hide the labels of point of interest
     // Reference: https://developers.google.com/maps/documentation/javascript/reference/map#Map
+    // Reference: https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
     // Example: https://developers.google.com/maps/documentation/javascript/examples/map-simple
+    // Example: https://developers.google.com/maps/documentation/javascript/examples/hiding-features
     const map = new google.maps.Map(document.getElementById("map"), {
         center: {
             lat: 22.3523,
@@ -25,6 +27,7 @@ function initMap() {
     const directionsService = new google.maps.DirectionsService();
     // Create DirectionsRenderer with the option of suppressing direction markers
     // Reference: https://developers.google.com/maps/documentation/javascript/reference/directions#DirectionsRenderer
+    // Reference: https://developers.google.com/maps/documentation/javascript/reference/directions#DirectionsRendererOptions
     const directionsRenderer = new google.maps.DirectionsRenderer({
         suppressMarkers: true
     });
@@ -33,9 +36,11 @@ function initMap() {
     directionsRenderer.setMap(map);
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     calculateAndDisplayRoute(directionsService, directionsRenderer);
-    // Create a constant for marker labels
+    // Create an array of numbers used to label the markers
+    // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
     const labels = "123456789";
-    // Create a constant array for markers
+    // Create an array of marker properties, including latitude, longitude, and infowindow content
+    // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
     const markerinfolist = [{
             lat: 22.3497609255,
             lng: 114.1939888133,
@@ -67,14 +72,17 @@ function initMap() {
             info: "<img src='img/lion_rock_park.jpg'><p><b>Lion Rock Park</b></p><p>Elevation: 100m</p><p>Progress: 4.7km/4.7km</p>"
         }
     ];
-    // Create markers using the constants of marker labels and locations
+    // Create markers using the constants of labels and markerinfolist
     // Reference: https://developers.google.com/maps/documentation/javascript/reference/marker#Marker
     // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
     // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
     // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-labels
     const markers = markerinfolist.map((markerinfo, i) => {
         const marker = new google.maps.Marker({
-            position: markerinfo,
+            position: {
+                lat: markerinfo.lat,
+                lng: markerinfo.lng
+            },
             map,
             label: {
                 text: labels[i % labels.length],
