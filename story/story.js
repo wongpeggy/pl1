@@ -37,11 +37,12 @@ function initMap() {
     directionsRenderer.setMap(map);
     calculateAndDisplayRoute(directionsService, directionsRenderer);
     // Create an array of numbers used to label the markers
-    // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
+    // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-labels
     const labels = "123456789";
+    let labelIndex = 0;
     // Create an array of marker properties, including latitude, longitude, and infowindow content
     // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
-    const markerinfolist = [{
+    const markerInfoList = [{
             lat: 22.3497609255,
             lng: 114.1939888133,
             info: "<img src='img/fat_jong_temple.jpg'><p><b>Temple Hill Fat Jong Temple</b><p>Elevation: 140m</p><p>Progress: 0.0km/4.7km</p>"
@@ -74,19 +75,19 @@ function initMap() {
     ];
     // Create markers and info windows using for loop
     // Reference: https://www.w3schools.com/js/js_iterables.asp
-    for (const markerinfo of markerinfolist) {
-        // Create markers using the constants of labels and markerinfolist
+    for (const markerInfo of markerInfoList) {
+        // Create markers using the constants of labels and markerInfoList
         // Reference: https://developers.google.com/maps/documentation/javascript/reference/marker#Marker
         // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
         // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-labels
         const marker = new google.maps.Marker({
             position: {
-                lat: markerinfo.lat,
-                lng: markerinfo.lng
+                lat: markerInfo.lat,
+                lng: markerInfo.lng
             },
             map,
             label: {
-                text: labels[i % labels.length],
+                text: labels[labelIndex++ % labels.length],
                 color: "white"
             }
         });
@@ -94,7 +95,7 @@ function initMap() {
         // Reference: https://developers.google.com/maps/documentation/javascript/reference/info-window
         // Example: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max
         const infowindow = new google.maps.InfoWindow({
-            content: markerinfo.info,
+            content: markerInfo.info,
             maxWidth: 130
         });
         // Open the info window when clicking the marker
