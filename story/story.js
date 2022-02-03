@@ -2,6 +2,7 @@
 // Author: Peggy Wong
 // Date Created: Feb 01, 2022
 // Date Modified: Feb 02, 2022
+
 function initMap() {
     // Create a new map and hide the labels of point of interest
     // Reference: https://developers.google.com/maps/documentation/javascript/reference/map#Map
