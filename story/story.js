@@ -72,12 +72,12 @@ function initMap() {
             info: "<img src='img/lion_rock_park.jpg'><p><b>Lion Rock Park</b></p><p>Elevation: 100m</p><p>Progress: 4.7km/4.7km</p>"
         }
     ];
-    // Create markers using the constants of labels and markerinfolist
-    // Reference: https://developers.google.com/maps/documentation/javascript/reference/marker#Marker
-    // Example: https://github.com/FlemingGeom/googlemaps-shawnmflemingc/blob/main/clustering/clustering.js
-    // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
-    // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-labels
+    // Create markers and info windows
     const markers = markerinfolist.map((markerinfo, i) => {
+        // Create markers using the constants of labels and markerinfolist
+        // Reference: https://developers.google.com/maps/documentation/javascript/reference/marker#Marker
+        // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-simple
+        // Example: https://developers.google.com/maps/documentation/javascript/examples/marker-labels
         const marker = new google.maps.Marker({
             position: {
                 lat: markerinfo.lat,
@@ -89,10 +89,16 @@ function initMap() {
                 color: "white"
             }
         });
+        // Create info windows and set the maximum width
+        // Reference: https://developers.google.com/maps/documentation/javascript/reference/info-window
+        // Example: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max
         const infowindow = new google.maps.InfoWindow({
             content: markerinfo.info,
-            maxWidth: 130
+            maxWidth: 120
         });
+        // Open the info window when clicking the marker
+        // Reference: https://developers.google.com/maps/documentation/javascript/reference/event#MVCObject-Methods
+        // Example: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max
         marker.addListener("click", () => {
             infowindow.open({
                 anchor: marker,
